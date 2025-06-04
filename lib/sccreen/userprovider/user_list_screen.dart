@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_getx_api_demo/sccreen/userprovider/profile_screen.dart';
 
 import 'user_provider.dart';
 
@@ -26,6 +27,17 @@ class UserListPage extends StatelessWidget {
                     leading: CircleAvatar(child: Text(user.id.toString())),
                     title: Text(user.name),
                     subtitle: Text(user.email),
+                    onTap: () {
+                      print("User ID ==> ${user.id}");
+                      print("User Name ==> ${user.name}");
+                      print("User Email ==> ${user.email}");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfileScreen(user: user),
+                        ),
+                      );
+                    },
                   );
                 },
               ),
