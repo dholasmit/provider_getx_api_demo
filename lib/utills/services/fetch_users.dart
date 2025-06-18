@@ -6,7 +6,10 @@ import 'package:provider_getx_api_demo/utills/models/user_model.dart';
 class ApiService {
   Future<List<User>> fetchUsers() async {
     String Url = "https://jsonplaceholder.typicode.com/users";
-    final response = await http.get(Uri.parse(Url));
+    final response = await http.get(
+      Uri.parse(Url),
+      headers: {'Content-Type': 'application/json'},
+    );
     print("Url ====> $Url");
     print("Response status: ${response.body}");
 

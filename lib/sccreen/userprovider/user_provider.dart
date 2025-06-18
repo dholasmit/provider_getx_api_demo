@@ -21,7 +21,8 @@ class UserProvider with ChangeNotifier {
     notifyListeners();
 
     try {
-      _users = await _apiService.fetchUsers();
+      // _users = await _apiService.fetchUsers();
+      _users = await ApiService().fetchUsers();
     } catch (e) {
       _error = e.toString();
     }
